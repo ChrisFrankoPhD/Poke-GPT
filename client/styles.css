@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+main {
+    background-image: linear-gradient(rgba(66, 11, 66, 0.596) 0%, rgba(66, 11, 66, 0.126) 100%), url(images/poke-backdrop-more.jpg);
+    /* background-image: linear-gradient(90deg, rgba(66, 11, 66, 0.596) 0%, rgba(66, 11, 66, 0.126) 100%); */
+    background-size: cover, cover;
+    background-position: center, center;
+    padding-bottom: 20px;
+}
+.vs {
+    width: 150px;
+}
+.header {
+    text-align: center;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    background-color: #30353d;
+    color: rgb(241, 241, 241);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    position: relative;
+}
+.page-title {
+    width: clamp(355px, 50%, 700px);
+}
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    min-height: 200px;
+    background-color: #00000089;
+    border-radius: 8% / 14%;
+    margin-top: 1rem;
+    padding: 2rem 0;
+}
+.output {
+    display: flex;
+    align-items: center;
+    min-height: 80%;
+    width: 80%;
+    color: rgb(241, 241, 241);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    text-align: center;
+}
+.cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    color: rgb(241, 241, 241);
+    background-color: #235eb0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 12% / 50%;
+    grid-column: 2 / 3;
+    margin: 0 auto;
+    border: 3px solid #ffd500;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+.button:hover {
+    color: rgb(143, 19, 19);
+    border-color: rgb(143, 19, 19);
+}
+.poke-card {
+    display: grid;
+    grid-template-rows: 16.67% 10.67% 15.67% 15.67% 16.67% 16.67%;
+    grid-template-columns: repeat(10, 10%);
+    background-color: #ffc889;
+    border-radius: 8% / 12%;
+    height: 275px;
+    width: 400px;
+    text-align: center;
+    color: rgb(241, 241, 241);
+    padding: 1rem;
+}
+.poke-name {
+    font-size: 2.5rem;
+    width: 100%;
+    grid-column: 1 / 8;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.img-container {
+    grid-column: 8 / 11;
+    grid-row: 1 / 4;
+    width: 110.38px;
+    height: 110.38px;
+    border-radius: 10%;
+    border: solid 2px rgb(241, 241, 241);
+    overflow: hidden;
+}
+.poke-sprite {
+    width: 100%;
+    object-fit:scale-down;
+}
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.light {
+    text-transform: none;
+    font-weight: lighter;
+}
+.poke-type, .poke-basestats, .poke-moves {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+}
+.poke-moves {
+    grid-column: 1 / 8;
+    grid-row: 2 / 5;
+    grid-template-columns: repeat(2, 50%);
+    height: 90%;
+}
+#move-header {
+    grid-column: 1 / -1;
+    align-self: end;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.poke-basestats {
+    grid-template-columns: repeat(3, 33%);
+    grid-column: 1 / 8;
+    grid-row: 5 / 7;
+    row-gap: 0.5rem;
+}
+.stat-header {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+.poke-type {
+    grid-column: 8 / 11;
+    grid-row: 4 / 7;
+}
+.card-value {
+    background-color: #e3cb6c;
+    color: rgb(241, 241, 241);
+    border-radius: 12% / 51%;
+    width: 75%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+}
+#type-header {
+    align-self: end;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+#dummy-font-test {
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    white-space: nowrap;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}

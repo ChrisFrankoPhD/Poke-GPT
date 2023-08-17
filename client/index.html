@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke-GPT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/pikachu-fav.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="main" class="main">
+        <header class="header"><img class="page-title" src="images/pokeGPT-logo.png" alt="title of site saying poke-smash in pokemon font"></header>
+        <section class="cards">
+            <div id="poke-card-0" class="poke-card">
+                <div id="poke-name-0" class="poke-name">Pokemon 1</div>
+                    <div class="img-container">
+                        <img id="poke-sprite-0" class="poke-sprite" src="images/qmark-font-square.png" alt="image of pokemon 0 sprite">
+                    </div>    
+                    <ul id="poke-moves-0" class="poke-moves">
+                        <div id="move-header">Learnset</div>
+                        <li id="move0-0" class="card-value">???</li>
+                        <li id="move1-0" class="card-value">???</li>
+                        <li id="move2-0" class="card-value">???</li>
+                        <li id="move3-0" class="card-value">???</li>
+                    </ul>
+                    <ul id="poke-basestats-0" class="poke-basestats">
+                        <div class="flex-col">
+                            <div class="stat-header">HP</div>
+                            <li id="stat0-0" class="stat card-value">??</li>
+                        </div>
+                        <div class="flex-col">
+                            <div class="stat-header">At</div>
+                            <li id="stat1-0" class="stat card-value">??</li>
+                        </div>
+                        <div class="flex-col">
+                            <div class="stat-header">Def</div>
+                            <li id="stat2-0" class="stat card-value">??</li>
+                        </div>
+                        <div class="flex-col">
+                            <div class="stat-header">Sp At</div>
+                            <li id="stat3-0" class="stat card-value">??</li>
+                        </div>
+                        <div class="flex-col">
+                            <div class="stat-header">Sp Def</div>
+                            <li id="stat4-0" class="stat card-value">??</li>
+                        </div>
+                        <div class="flex-col">
+                            <div class="stat-header">Speed</div>
+                            <li id="stat5-0" class="stat card-value">??</li>
+                        </div>
+                    </ul>
+                    <ul id="poke-type-0" class="poke-type">
+                        <div id="type-header">Types</div>
+                        <li id="type0-0" class="card-value">???</li>
+                        <li id="type1-0" class="card-value"></li>
+                        <li id="type2-0" class="card-value"></li>
+                    </ul>
+                </div>
+            </div>
+            <img class="vs" src="images/vs-font.png" alt="VS in pokemon font">
+            <div id="poke-card-1" class="poke-card">
+                <div id="poke-name-1" class="poke-name">Pokemon 2</div>
+                <div class="img-container">
+                    <img id="poke-sprite-1" class="poke-sprite" src="images/qmark-font-square.png" alt="image of pokemon 1 sprite">
+                </div>
+                <ul id="poke-moves-1" class="poke-moves">
+                    <div id="move-header">Learnset</div>
+                    <li id="move0-1" class="card-value">???</li>
+                    <li id="move1-1" class="card-value">???</li>
+                    <li id="move2-1" class="card-value">???</li>
+                    <li id="move3-1" class="card-value">???</li>
+                </ul>
+                <ul id="poke-basestats-1" class="poke-basestats">
+                    <div class="flex-col">
+                        <div class="stat-header">HP</div>
+                        <li id="stat0-1" class="stat card-value">??</li>
+                    </div>
+                    <div class="flex-col">
+                        <div class="stat-header">At</div>
+                        <li id="stat1-1" class="stat card-value">??</li>
+                    </div>
+                    <div class="flex-col">
+                        <div class="stat-header">Def</div>
+                        <li id="stat2-1" class="stat card-value">??</li>
+                    </div>
+                    <div class="flex-col">
+                        <div class="stat-header">Sp At</div>
+                        <li id="stat3-1" class="stat card-value">??</li>
+                    </div>
+                    <div class="flex-col">
+                        <div class="stat-header">Sp Def</div>
+                        <li id="stat4-1" class="stat card-value">??</li>
+                    </div>
+                    <div class="flex-col">
+                        <div class="stat-header">Speed</div>
+                        <li id="stat5-1" class="stat card-value">??</li>
+                    </div>
+                </ul>
+                <ul id="poke-type-1" class="poke-type">
+                    <div id="type-header" class="header">Types</div>
+                    <li id="type0-1" class="card-value">???</li>
+                    <li id="type1-1" class="card-value"></li>
+                    <li id="type2-1" class="card-value"></li>
+                </ul>
+            </div>
+        </section>
+        <div class="flex">
+            <button id="fight-button" class="button">Simulate</button>
+        </div>
+        <section class="flex">
+            <div class="text-container">
+                <div id="battle" class="output">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            Chris Franko
+        </div>
+        <div id="dummy-font-test"></div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
