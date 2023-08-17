@@ -39,7 +39,7 @@ main {
     width: 65%;
     min-height: 200px;
     background-color: #00000089;
-    border-radius: 8% / 14%;
+    border-radius: 3% / 14%;
     margin-top: 1rem;
     padding: 2rem 0;
 }
