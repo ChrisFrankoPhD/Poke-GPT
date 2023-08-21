@@ -206,10 +206,16 @@ main {
 }
 
 .subtle-link {
+  color: azure;
   text-decoration: none;
 }
 
 .subtle-link:hover {
   color: rgba(219, 113, 252, 0.733)!important;
+  cursor: pointer;
+}
+
+.subtle-link:visited {
+  color: rgba(124, 246, 255, 0.733);
   cursor: pointer;
 }
