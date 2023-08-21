@@ -1,8 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
+import path from "path";
 const app = express();
 dotenv.config({ path: "./.env" });
-const port = 5000;
+const PORT = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/")));
+}
 
 async function getResponseFromChatGPT(pokeNames, randMoves) {
   console.log("in getResponseFromChatGPT function:");
@@ -61,6 +66,6 @@ app.post("/api/", async (req, res) => {
 });
 
 // Start Server
-app.listen(port, () => {
-  console.log(`Express server started on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Express server started on port ${PORT}`);
 });
