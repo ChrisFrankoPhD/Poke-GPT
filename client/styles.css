@@ -204,3 +204,12 @@ main {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
 }
+
+.subtle-link {
+  text-decoration: none;
+}
+
+.subtle-link:hover {
+  color: rgba(219, 113, 252, 0.733)!important;
+  cursor: pointer;
+}

@@ -3,26 +3,26 @@ document.getElementById("fight-button").addEventListener("click", pokeApi);
 
 // this function calls the list of all pokemon from the pokeApi, then picks two random pokemon from that list, the initial call is needed since the number of pokemon changes relatively frequently with games like pokemon GO, the function then passes the info to an HTML editor function, and to the chatGPT api
 async function pokeApi() {
-  console.log("event listener working");
+  // console.log("event listener working");
 
   // collect initial pokeapi data
   const response = await fetch(
     "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0"
   );
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   let pokeInfo = [];
 
   // picking two random pokemon, this is done in a while loop that ensures that both pokemon picked have valid move lists, pokemon with no movelists break the HTML updater
   while (true) {
     const randNum1 = Math.floor(Math.random() * data.results.length);
     const randNum2 = Math.floor(Math.random() * data.results.length);
-    console.log(randNum1, randNum2);
+    // console.log(randNum1, randNum2);
 
     const pokeUrl1 = data.results[randNum1].url;
     const pokeUrl2 = data.results[randNum2].url;
     pokeInfo = await getPokeData(pokeUrl1, pokeUrl2);
-    console.log(pokeInfo);
+    // console.log(pokeInfo);
     if (pokeInfo[0].moves.length && pokeInfo[1].moves.length) {
       break;
     }
@@ -30,12 +30,12 @@ async function pokeApi() {
 
   // pass the two pokemon infos to the HTML updater, initial an array of random moves that is filled by the HTML function when it picks the learnset, which is then passed to the chatGTP function so that it has access to the move list
   let randMoves = updatePokeHtml(pokeInfo);
-  console.log(randMoves);
+  // console.log(randMoves);
   const battle = await getBattleSim(
     [pokeInfo[0].name, pokeInfo[1].name],
     randMoves
   );
-  console.log(battle);
+  // console.log(battle);
   updateBattleHtml(battle);
 }
 
@@ -56,7 +56,7 @@ async function getPokeData(pokeUrl1, pokeUrl2) {
 // updates all of the relevant HTML in the pokemon cards using the returns json pokemon data
 function updatePokeHtml(pokeInfo) {
   let randNums = ["", "", "", "", "", "", "", ""];
-  console.log(pokeInfo[0]);
+  // console.log(pokeInfo[0]);
   document.getElementById("battle").innerText =
     "Simulating... May take up to 20 seconds to simulate battle";
   pokeInfo.forEach((pokemon, pokeIdx) => {
@@ -139,7 +139,7 @@ function updatePokeHtml(pokeInfo) {
 // function that calls the chatGPT API for the battle simulation
 async function getBattleSim(pokeNames, randMoves) {
   const body = { pokeNames, randMoves };
-  console.log(body);
+  // console.log(body);
   const response = await fetch("/api", {
     method: "POST",
     headers: {
@@ -148,7 +148,7 @@ async function getBattleSim(pokeNames, randMoves) {
     body: JSON.stringify(body),
   });
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 
