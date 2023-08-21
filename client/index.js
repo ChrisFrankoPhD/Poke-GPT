@@ -140,7 +140,7 @@ function updatePokeHtml(pokeInfo) {
 async function getBattleSim(pokeNames, randMoves) {
   const body = { pokeNames, randMoves };
   console.log(body);
-  const response = await fetch("http://localhost:5000/api", {
+  const response = await fetch("/api", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
