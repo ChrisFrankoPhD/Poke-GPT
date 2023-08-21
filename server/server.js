@@ -8,7 +8,6 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
   console.log("in getResponseFromChatGPT function:");
   try {
     const apiKey = process.env.chatApiKey;
-    console.log(apiKey);
     const url = `https://api.openai.com/v1/chat/completions`;
     console.log(pokeNames);
 
@@ -34,7 +33,14 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
     });
 
     const data = await response.json();
+    console.log("data:");
     console.log(data);
+    console.log("data end.");
+    if (data.error.type === 'insufficient_quota') {
+       return "Sorry, the simulation limit of my wallet has been reached, please try again later"
+    } else if (data.error.type === 'invalid_request_error') {
+      return `Sorry ChatGPT was unable to get ${pokeNames[0]} and ${pokeNames[1]} to fight, they are too friendly, or there might be an API key issue, who's to say.`
+    }
     const text = data.choices[0].message.content.trim();
     return text;
   } catch (err) {

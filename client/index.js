@@ -139,7 +139,8 @@ function updatePokeHtml(pokeInfo) {
 // function that calls the chatGPT API for the battle simulation
 async function getBattleSim(pokeNames, randMoves) {
   const body = { pokeNames, randMoves };
-  const response = await fetch("/api", {
+  console.log(body);
+  const response = await fetch("http://localhost:5000/api", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
