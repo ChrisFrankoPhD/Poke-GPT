@@ -149,8 +149,7 @@ async function getBattleSim(pokeNames, randMoves) {
   });
   const data = await response.json();
   console.log(data);
-  const text = data[0];
-  return text;
+  return data;
 }
 
 // update the text for the simulated battle
