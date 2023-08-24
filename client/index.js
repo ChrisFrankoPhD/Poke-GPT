@@ -42,23 +42,19 @@ async function pokeApi() {
 // gets individual pokemon data using the random URLs, returns then in an array
 async function getPokeData(pokeUrl1, pokeUrl2) {
   const response1 = await fetch(pokeUrl1);
-  const data1 = await response1.json();
-  const pokeInfo1 = data1;
+  const pokeInfo1 = await response1.json();
   const response2 = await fetch(pokeUrl2);
-  const data2 = await response2.json();
-  const pokeInfo2 = data2;
+  const pokeInfo2 = await response2.json();
   return [pokeInfo1, pokeInfo2];
-  // const pokeList = [pokeInfo1, pokeInfo2]
-  // console.log(pokeList)
-  // return pokeList
 }
 
 // updates all of the relevant HTML in the pokemon cards using the returns json pokemon data
 function updatePokeHtml(pokeInfo) {
-  let randNums = ["", "", "", "", "", "", "", ""];
+  let randMoves = ["", "", "", "", "", "", "", ""];
   // console.log(pokeInfo[0]);
   document.getElementById("battle").innerText =
     "Simulating... May take up to 20 seconds to simulate battle";
+
   pokeInfo.forEach((pokemon, pokeIdx) => {
     // automatically setting the font size for the name div by setting up a dummy div to fit the font, and decreasing the font size until the dummy div is smaller than the name div, then setting the name at that font in the name div, this way it does not overfill ever
     const dummyDiv = document.getElementById("dummy-font-test");
@@ -71,24 +67,16 @@ function updatePokeHtml(pokeInfo) {
     const nameDivWidth = nameDiv.clientWidth;
     dummyDiv.innerText = capName;
 
-    // set initial variable for tracking the dummy width, adn set initial font size (in rem)
+    // set initial variable for tracking the dummy width, and set initial font size (in rem)
     let dummyDivWidth = dummyDiv.clientWidth;
     let initFont = 2.5;
     dummyDiv.style.fontSize = "2.5rem";
 
-    // console.log(dummyDiv.style.fontSize);
-    // console.log(dummyDivWidth, nameDivWidth);
-
-    // console.log(dummyDivWidth > (nameDivWidth * 0.9))
     while (dummyDivWidth > nameDivWidth * 0.9) {
       initFont -= 0.1;
       dummyDiv.style.fontSize = `${initFont}rem`;
       dummyDivWidth = dummyDiv.clientWidth;
-      // console.log(dummyDiv.style.fontSize);
-      // console.log(dummyDiv.clientWidth);
     }
-    // console.log(initFont)
-    // console.log(dummyDiv.clientWidth)
     nameDiv.style.fontSize = `${initFont}rem`;
 
     // setting the pokemon name, sprite image, and background color for the card (based on first type)
@@ -130,10 +118,10 @@ function updatePokeHtml(pokeInfo) {
       document.getElementById(`move${i}-${pokeIdx}`).style.backgroundColor =
         colors[`${pokemon.types[0].type.name}2`];
 
-      randNums[i + pokeIdx * 4] = randMove.name;
+      randMoves[i + pokeIdx * 4] = randMove.name;
     }
   });
-  return randNums;
+  return randMoves;
 }
 
 // function that calls the chatGPT API for the battle simulation
