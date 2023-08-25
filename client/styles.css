@@ -15,9 +15,7 @@ main {
   background-position: center, center;
   padding-bottom: 20px;
 }
-.vs {
-  width: 150px;
-}
+
 .header {
   text-align: center;
 }
@@ -38,14 +36,10 @@ main {
 }
 .text-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 65%;
+  width: 85%;
   min-height: 200px;
   background-color: #00000089;
-  border-radius: 3% / 14%;
-  margin-top: 1rem;
-  padding: 2rem 0;
+  border-radius: 15px / 15px;
 }
 .output {
   display: flex;
@@ -60,17 +54,13 @@ main {
   line-height: 1.5;
   text-align: center;
 }
-.cards {
+/* .cards {
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 2%;
   justify-content: center;
   align-items: center;
-}
-.flex {
-  display: flex;
-  justify-content: center;
-}
+} */
 .button {
   display: inline-block;
   width: 200px;
@@ -99,7 +89,7 @@ main {
   grid-template-rows: 16.67% 10.67% 15.67% 15.67% 16.67% 16.67%;
   grid-template-columns: repeat(10, 10%);
   background-color: #ffc889;
-  border-radius: 8% / 12%;
+  border-radius: 20px / 20px;
   height: 275px;
   width: 400px;
   text-align: center;
@@ -117,6 +107,9 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+.vs {
+  width: 100px;
 }
 .img-container {
   grid-column: 8 / 11;
@@ -218,4 +211,18 @@ main {
 .subtle-link:visited {
   color: rgba(124, 246, 255, 0.733);
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+  .text-container {
+    width: 85%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-container {
+    width: 65%;
+  }
 }
