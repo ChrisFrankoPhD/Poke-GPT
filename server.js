@@ -47,15 +47,17 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
       headers: myHeaders,
     });   
     const data = await response.json();
-    // console.log("data:");
-    // console.log(data);
-    // console.log("data end.");
+    console.log("data:");
+    console.log(data);
+    console.log("data end.");
 
     // Handling common errors with the request and returning them to the user, if things went well we will get a regular response and return that
-    if (data.error.type === 'insufficient_quota') {
-       return "Sorry, the simulation limit of my wallet has been reached, please try again later"
-    } else if (data.error.type === 'invalid_request_error') {
-      return `Sorry ChatGPT was unable to get ${pokeNames[0]} and ${pokeNames[1]} to fight, they are too friendly, or there might be an API key issue, who's to say.`
+    if (data.error) {
+      if (data.error.type === 'insufficient_quota') {
+        return "Sorry, the simulation limit of my wallet has been reached, please try again later"
+      } else if (data.error.type === 'invalid_request_error') {
+        return `Sorry ChatGPT was unable to get ${pokeNames[0]} and ${pokeNames[1]} to fight, they are too friendly, or there might be an API key issue, who's to say.`
+      }
     }
     const text = data.choices[0].message.content.trim();
     return text;
