@@ -29,7 +29,7 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
       messages: [
         {
           role: "user",
-          content: `Narrate a 750 character maximum length pokemon battle between a ${pokeNames[0]}, who knows the moves: ${randMoves[0]}, ${randMoves[1]}, ${randMoves[2]}, and ${randMoves[3]}, and a ${pokeNames[1]} who knows the moves: ${randMoves[4]}, ${randMoves[5]}, ${randMoves[6]}, and ${randMoves[7]}.`,
+          content: `Narrate a short pokemon battle between a ${pokeNames[0]}, who knows the moves: ${randMoves[0]}, ${randMoves[1]}, ${randMoves[2]}, and ${randMoves[3]}, and a ${pokeNames[1]} who knows the moves: ${randMoves[4]}, ${randMoves[5]}, ${randMoves[6]}, and ${randMoves[7]}.`,
         },
       ],
       temperature: 0,
@@ -47,9 +47,9 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
       headers: myHeaders,
     });   
     const data = await response.json();
-    console.log("data:");
-    console.log(data);
-    console.log("data end.");
+    // console.log("data:");
+    // console.log(data);
+    // console.log("data end.");
 
     // Handling common errors with the request and returning them to the user, if things went well we will get a regular response and return that
     if (data.error) {
