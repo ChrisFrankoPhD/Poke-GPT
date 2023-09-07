@@ -22,17 +22,17 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
     const apiKey = process.env.chatApiKey;
     const url = `https://api.openai.com/v1/chat/completions`;
     // console.log(pokeNames);
-
+    
     // construct request body with properties needed by ChatGPT, "content" is our custom prompt, model is the chat version to use, and temperature indicates the level of coherence vs creativity in the response, where 0 is the most coherent/conservative, and 1 is less coherent but more creative/random
     const body = JSON.stringify({
       model: "gpt-3.5-turbo",
       messages: [
         {
           role: "user",
-          content: `Narrate a short pokemon battle between a ${pokeNames[0]}, who knows the moves: ${randMoves[0]}, ${randMoves[1]}, ${randMoves[2]}, and ${randMoves[3]}, and a ${pokeNames[1]} who knows the moves: ${randMoves[4]}, ${randMoves[5]}, ${randMoves[6]}, and ${randMoves[7]}.`,
+          content: `Narrate a pokemon battle between ${pokeNames[0]} and ${pokeNames[1]}. ${pokeNames[0]} knows the moves ${randMoves[0]}, ${randMoves[1]}, ${randMoves[2]}, and ${randMoves[3]}. ${pokeNames[1]} knows the moves ${randMoves[4]}, ${randMoves[5]}, ${randMoves[6]}, and ${randMoves[7]}.`,
         },
       ],
-      temperature: 0,
+      temperature: 0.5,
     });
     
     // construct the headers of the request
