@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(253, 253, 253, 0.918);
+    border-radius: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -38,6 +51,7 @@ main {
   display: flex;
   width: 85%;
   min-height: 200px;
+  max-height: 400px;
   background-color: #00000089;
   border-radius: 15px / 15px;
 }
